@@ -1,0 +1,50 @@
+{
+    "info": {
+        "name": "Learning Recommendation Service",
+        "_postman_id": "b3d3d2d6-2b8f-4a93-9c17-000000000001",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Health",
+            "request": {
+                "method": "GET",
+                "url": "http://127.0.0.1:8000/health"
+            }
+        },
+        {
+            "name": "Recommend",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "X-API-Key",
+                        "value": "change-me"
+                    }
+                ],
+                "url": "http://127.0.0.1:8000/recommend/1?limit=10"
+            }
+        },
+        {
+            "name": "Feedback",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "X-API-Key",
+                        "value": "change-me"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "url": "http://127.0.0.1:8000/feedback",
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\"user_id\":1,\"content_id\":1,\"type\":\"like\",\"rating\":5}"
+                }
+            }
+        }
+    ]
+}
